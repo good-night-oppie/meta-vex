@@ -1,0 +1,16 @@
+[project]
+name = "ionq-hooks-pytest"
+version = "0.1.0"
+description = "pytest plugin that writes structured results to .harness/test-result.json for ionq-hooks anti-reward-hack pack"
+requires-python = ">=3.10"
+dependencies = ["pytest>=7.0"]
+
+[project.entry-points.pytest11]
+ionq_hooks = "ionq_hooks_pytest"
+
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools]
+py-modules = ["ionq_hooks_pytest"]

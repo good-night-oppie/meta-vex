@@ -1,0 +1,27 @@
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+.venv/
+venv/
+.env
+.env.local
+*.db
+*.sqlite
+*.sqlite3
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+dist/
+build/
+.DS_Store
+.idea/
+.vscode/
+tool-results/
+/tmp/coach-spec*.json
+.orchestra/mailbox/*.local.md
+
+# uv
+uv.lock

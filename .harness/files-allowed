@@ -1,0 +1,12 @@
+# In-scope files for the current task.
+# Stop hook blocks edits to anything not matching a pattern here.
+# Glob patterns: exact, prefix/**, prefix/*, fnmatch.
+
+# Replace with task-relevant scope before kicking off.
+src/**
+tests/**
+
+# Harness scratch (agent may write here)
+.harness/disclosure.md
+.harness/plan.md
+.harness/notes.md

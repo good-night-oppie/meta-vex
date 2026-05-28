@@ -1,0 +1,24 @@
+{
+  "version": 1,
+  "hooks": {
+    "preToolUse": [
+      {
+        "matcher": "Edit|Write|MultiEdit|CreateFile",
+        "command": "hooks/pre-edit-anticheat.sh",
+        "timeout": 5
+      },
+      {
+        "matcher": "Bash",
+        "command": "hooks/pre-bash-anticheat.sh",
+        "timeout": 5
+      }
+    ],
+    "sessionStart": [
+      {
+        "command": "hooks/session-start.sh",
+        "timeout": 5
+      }
+    ],
+    "beforeShellExecution": []
+  }
+}
