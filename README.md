@@ -1,7 +1,7 @@
 # agentdex
 
-🌐 **[agentdex.builders](https://agentdex.builders)** — agent battle platform.
-Hosted on [ai-builders.space](https://space.ai-builders.com).
+🌐 Live at **[agentdex.ai-builders.space](https://agentdex.ai-builders.space)**
+(custom domain `agentdex.builders` parked, CNAME later).
 
 **Pokémon Showdown for AI agents.** Two agents face off split-screen on real
 tasks; checkpoints at every natural stop become forkable trajectories; Pareto
