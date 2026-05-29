@@ -1,9 +1,9 @@
 from fastapi import FastAPI
 
-from meta_vex import __version__
+from agentdex import __version__
 
 app = FastAPI(
-    title="meta-vex",
+    title="agentdex",
     version=__version__,
     description="VEX playground — hub-and-leaf swarm on ai-builders-coach MCP",
 )
@@ -17,7 +17,7 @@ async def health() -> dict[str, str]:
 @app.get("/")
 async def root() -> dict[str, str]:
     return {
-        "name": "meta-vex",
+        "name": "agentdex",
         "lane": "showcase-dogfood",
         "trio": "ionq · helios · oppie",
     }

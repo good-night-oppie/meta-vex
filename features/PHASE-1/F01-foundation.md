@@ -10,14 +10,14 @@ Repo scaffolds cleanly, CI green, swimlane wired, ionq-hooks active.
 
 ## Deliverables
 
-- [x] Python (uv) skeleton with `meta_vex/` package
+- [x] Python (uv) skeleton with `agentdex/` package
 - [x] FastAPI `/health` + identity routes
 - [x] `.orchestra/mailbox/` + role doc in `CLAUDE.md`
 - [x] ionq-hooks pack generated (`.claude/`, `.cursor/`, `.harness/`, `hooks/`)
 - [x] `scripts/loop_driver.sh` (4 lanes) + heartbeat snap
 - [x] CI workflow (ruff + mypy + pytest + coverage)
 - [x] 4 foundational ADRs (stack, hooks, swimlane, coach-cache)
-- [ ] Remote repo `good-night-oppie/meta-vex` public + first push
+- [ ] Remote repo `good-night-oppie/agentdex` public + first push
 - [ ] CI green on first push
 - [ ] Linear project + epic created
 

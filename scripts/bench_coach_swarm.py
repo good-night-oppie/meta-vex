@@ -35,7 +35,7 @@ from pathlib import Path
 REPO_ROOT = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(REPO_ROOT))
 
-from meta_vex.coach import CoachCache  # noqa: E402
+from agentdex.coach import CoachCache  # noqa: E402
 
 _DEFAULT_MCP_BIN = str(Path.home() / ".npm-global" / "bin" / "mcp-coach-server")
 MCP_BIN = os.environ.get("MCP_COACH_BIN", _DEFAULT_MCP_BIN)
@@ -178,7 +178,7 @@ async def main() -> int:
                     f"{time.strftime('%Y-%m-%d')}-coach-1.0.10-{3}leaf.json")
     args = ap.parse_args()
 
-    hub_cache_dir = Path("/tmp/meta-vex-bench")
+    hub_cache_dir = Path("/tmp/agentdex-bench")
 
     print(f"=== bench: {args.leaves} leaves, cold={args.cold} ===")
     print(f"  MCP binary: {MCP_BIN}")

@@ -10,7 +10,7 @@ from __future__ import annotations
 from collections.abc import Iterable
 from typing import Any
 
-from meta_vex.swarm.registry import register
+from agentdex.swarm.registry import register
 
 # --- coach workloads ---
 

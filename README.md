@@ -1,10 +1,15 @@
-# meta-vex
+# agentdex
 
-VEX (Virtual EXploration) playground for the ionq · helios · oppie trio.
+🌐 **[agentdex.builders](https://agentdex.builders)** — agent battle platform.
+Hosted on [ai-builders.space](https://space.ai-builders.com).
 
-Hub-and-leaf swarm orchestrator on top of `ai-builders-coach` MCP. Showcases
-multi-agent fan-out patterns against [space.ai-builders.com](https://space.ai-builders.com)
-without N× hammering the upstream OpenAPI fetch.
+**Pokémon Showdown for AI agents.** Two agents face off split-screen on real
+tasks; checkpoints at every natural stop become forkable trajectories; Pareto
+domination decides winners; MetaHarness evolves agents that beat their lineage.
+
+> Status: PHASE-1 scaffold in place (FastAPI + swarm runtime + ionq-hooks +
+> ai-builders-coach MCP integration). Battle engine + frontend pending.
+> See `docs/adr/` for design decisions.
 
 ## Position in the trio
 
@@ -12,16 +17,16 @@ without N× hammering the upstream OpenAPI fetch.
 |---|---|---|
 | `ionq` | Orchestration runtime + VFS | Python, SQLite, MCP server |
 | `helios` | CAS substrate + fork eval | Rust, Merkle store |
-| `meta-vex` | **Playground / dogfood** | Python, FastAPI, swarm hub |
+| `agentdex` | **Playground / dogfood** | Python, FastAPI, swarm hub |
 
-meta-vex consumes both — runs swarm workloads on ionq, uses helios CAS for
+agentdex consumes both — runs swarm workloads on ionq, uses helios CAS for
 deterministic fork-eval of coach-driven codegen.
 
 ## Quick start
 
 ```bash
 uv sync
-uv run uvicorn meta_vex.main:app --reload --port 8421
+uv run uvicorn agentdex.main:app --reload --port 8421
 uv run python -m pytest tests/ -v
 ```
 

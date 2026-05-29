@@ -5,7 +5,7 @@
 
 ## Context
 
-meta-vex's value depends on swarm workloads producing real fix-attempts
+agentdex's value depends on swarm workloads producing real fix-attempts
 against coach API endpoints. AI agents writing those fixes can reward-hack
 (disable tests, scope-drift, fake-pass) without guardrails.
 
@@ -15,7 +15,7 @@ Generate the `ionq-hooks` cookiecutter pack at scaffold time with:
 
 | Var | Value | Reason |
 |---|---|---|
-| `target_agent` | `both` (claude + cursor) | Dogfood both surfaces meta-vex showcases |
+| `target_agent` | `both` (claude + cursor) | Dogfood both surfaces agentdex showcases |
 | `test_runner` | `pytest` | Matches stack (see ADR-0001) |
 | `judge_model` | `claude-sonnet-4-6` | No `op` dep needed, fewer external surfaces |
 | `enable_heldout_sampling` | `yes` (15%) | Catch heldout regressions without 100% cost |
@@ -26,5 +26,5 @@ Generate the `ionq-hooks` cookiecutter pack at scaffold time with:
 
 - `.claude/`, `.cursor/`, `.harness/`, `hooks/_ionq_hooks/` shipped from day 1
 - Stop / PostToolUse / UserPromptSubmit guardrails fire on agent edits
-- Upstream `ionq-hooks` bugs surface to meta-vex first (already filed one
+- Upstream `ionq-hooks` bugs surface to agentdex first (already filed one
   via `.orchestra/mailbox/ionq.md`); cycle benefits both repos

@@ -5,7 +5,7 @@
 
 ## Context
 
-meta-vex is the playground / dogfood lane for the `ionq · helios · oppie` trio.
+agentdex is the playground / dogfood lane for the `ionq · helios · oppie` trio.
 It needs to:
 - Drive `ai-builders-coach` MCP swarm workloads
 - Sit naturally alongside sibling repos

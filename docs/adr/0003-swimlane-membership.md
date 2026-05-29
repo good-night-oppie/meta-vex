@@ -12,23 +12,23 @@ handoffs, broadcasts, heartbeat.
 
 ## Decision
 
-meta-vex joins the constellation as session **`meta-vex`** with role
+agentdex joins the constellation as session **`agentdex`** with role
 **Showcase / Dogfood Lane**.
 
 | Mailbox file | Purpose |
 |---|---|
-| `meta-vex.md` | Inbox |
+| `agentdex.md` | Inbox |
 | `all.md` | Broadcast to all peers |
 | `ionq.md` | Direct to ionq (bug surfacing, runtime questions) |
 | `helios.md` | Direct to helios (CAS / fork-eval) |
 | `cursor.md` | Direct to meta-planner (strategic) |
 
 Heartbeat snapshot location:
-`~/.cursor/projects/home-etang/heartbeat/snapshots/meta-vex.txt`,
+`~/.cursor/projects/home-etang/heartbeat/snapshots/agentdex.txt`,
 written by `scripts/loop_driver.sh` on every tick.
 
 ## Consequences
 
-- Existing peers can address meta-vex without ad-hoc plumbing
-- meta-vex's job to drain inbox + ack on every prompt (per CLAUDE.md)
-- Constellation heartbeat sweep picks up meta-vex automatically
+- Existing peers can address agentdex without ad-hoc plumbing
+- agentdex's job to drain inbox + ack on every prompt (per CLAUDE.md)
+- Constellation heartbeat sweep picks up agentdex automatically

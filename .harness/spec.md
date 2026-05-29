@@ -12,7 +12,7 @@ features F01–F04 (see `features/PHASE-1/`).
 2. 3-leaf swarm completes against live coach without triggering 429 from
    `space.ai-builders.com`.
 3. Loop driver tick (`scripts/loop_driver.sh`) writes a heartbeat snapshot
-   to `~/.cursor/projects/home-etang/heartbeat/snapshots/meta-vex.txt`
+   to `~/.cursor/projects/home-etang/heartbeat/snapshots/agentdex.txt`
    reflecting current branch, commit, stage, mailbox depth.
 
 ## Out-of-scope (do not touch)

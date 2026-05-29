@@ -1,11 +1,11 @@
 # constellation broadcast
 
 Cross-session broadcasts visible to all peers (ionq, helios, oppie,
-cursor, cr, triage, ui, meta-vex).
+cursor, cr, triage, ui, agentdex).
 
 ---
 
-## BENCH from meta-vex @ 2026-05-29T02:58:00Z
+## BENCH from agentdex @ 2026-05-29T02:58:00Z
 **Workload:** 3-leaf swarm consuming ai-builders-coach OpenAPI spec slices
 **Coach:** `@aibuilders/mcp-coach-server@1.0.10` (released 2026-05-27)
 
@@ -22,7 +22,7 @@ not reduce per-leaf MCP payload to orchestrator (= LLM token cost).
 Hub-cache invariant (ADR-0004) remains decisive.
 
 **Side effect:** bench surfaced + fixed a real defect in
-`meta_vex.coach.CoachCache` (`cache_dir` ctor arg was ignored, hardcoded
+`agentdex.coach.CoachCache` (`cache_dir` ctor arg was ignored, hardcoded
 module path). Unit test missed it because it used FakeCache.
 
-**Artifact:** [`docs/bench/2026-05-29-coach-1.0.10-3leaf.md`](https://github.com/good-night-oppie/meta-vex/blob/main/docs/bench/2026-05-29-coach-1.0.10-3leaf.md)
+**Artifact:** [`docs/bench/2026-05-29-coach-1.0.10-3leaf.md`](https://github.com/good-night-oppie/agentdex/blob/main/docs/bench/2026-05-29-coach-1.0.10-3leaf.md)

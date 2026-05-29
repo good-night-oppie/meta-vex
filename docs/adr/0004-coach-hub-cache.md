@@ -23,13 +23,13 @@ Hub-and-leaf with single-fetch cache:
 
 ```
 hub:
-  CoachCache.fetch_spec() → /tmp/meta-vex/coach-spec.json (+ ETag)
+  CoachCache.fetch_spec() → /tmp/agentdex/coach-spec.json (+ ETag)
 leaves (N parallel):
-  Read /tmp/meta-vex/coach-spec.json offset=X limit=Y
+  Read /tmp/agentdex/coach-spec.json offset=X limit=Y
   reason on slice
 ```
 
-`meta_vex.swarm.hub.Hub` enforces the invariant: spec fetched ONCE before
+`agentdex.swarm.hub.Hub` enforces the invariant: spec fetched ONCE before
 any leaf runs. Leaves receive a `spec_slice` argument, never call coach
 MCP directly.
 

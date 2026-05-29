@@ -5,9 +5,9 @@ from __future__ import annotations
 import pytest
 from fastapi.testclient import TestClient
 
-from meta_vex.main import app
-from meta_vex.swarm.hub import Hub, LeafTask
-from meta_vex.swarm.leaf import count_endpoints, list_schema_names
+from agentdex.main import app
+from agentdex.swarm.hub import Hub, LeafTask
+from agentdex.swarm.leaf import count_endpoints, list_schema_names
 
 
 def test_health() -> None:
@@ -21,7 +21,7 @@ def test_root_identity() -> None:
     client = TestClient(app)
     resp = client.get("/")
     body = resp.json()
-    assert body["name"] == "meta-vex"
+    assert body["name"] == "agentdex"
     assert body["lane"] == "showcase-dogfood"
 
 

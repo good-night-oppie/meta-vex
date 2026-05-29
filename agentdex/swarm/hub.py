@@ -9,8 +9,8 @@ from typing import Any
 
 import anyio
 
-from meta_vex.coach import CoachCache
-from meta_vex.swarm.result import FailureMode, LeafResult
+from agentdex.coach import CoachCache
+from agentdex.swarm.result import FailureMode, LeafResult
 
 
 @dataclass

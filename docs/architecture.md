@@ -12,8 +12,8 @@
                                    │ single fetch
                                    ▼
             ┌──────────────────────────────────────────┐
-            │  meta_vex.coach.CoachCache (hub-only)    │
-            │  /tmp/meta-vex/coach-spec.json + ETag    │
+            │  agentdex.coach.CoachCache (hub-only)    │
+            │  /tmp/agentdex/coach-spec.json + ETag    │
             └──────────────────────────────────────────┘
                                    │ read cached slice
               ┌────────────────────┼────────────────────┐
@@ -31,6 +31,6 @@ See `docs/adr/` (populated by `tech-lead:adr` runs).
 
 ## Cross-trio role
 
-- **ionq:** provides VFS + agent execution loop; meta-vex leaves run inside ionq agents
+- **ionq:** provides VFS + agent execution loop; agentdex leaves run inside ionq agents
 - **helios:** provides CAS substrate for K-way speculative fork eval of leaf outputs
-- **oppie:** trio-meta layer; meta-vex feeds dogfood signal back to oppie roadmap
+- **oppie:** trio-meta layer; agentdex feeds dogfood signal back to oppie roadmap

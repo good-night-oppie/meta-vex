@@ -5,10 +5,10 @@ from __future__ import annotations
 import pytest
 
 # Importing leaf populates the registry.
-import meta_vex.swarm.leaf  # noqa: F401
-from meta_vex.swarm.hub import Hub, LeafTask
-from meta_vex.swarm.registry import list_names, resolve
-from meta_vex.swarm.result import FailureMode
+import agentdex.swarm.leaf  # noqa: F401
+from agentdex.swarm.hub import Hub, LeafTask
+from agentdex.swarm.registry import list_names, resolve
+from agentdex.swarm.result import FailureMode
 
 SAMPLE_DATASET = {
     "records": [

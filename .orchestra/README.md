@@ -4,7 +4,7 @@ Implements the [ionq Multi-Session Overcommunication Protocol](../CLAUDE.md#mult
 
 ```
 mailbox/
-├── meta-vex.md   ← inbox for THIS session
+├── agentdex.md   ← inbox for THIS session
 ├── all.md        ← broadcasts visible to entire constellation
 └── <peer>.md     ← (created on first message to that peer)
 ```
@@ -14,5 +14,5 @@ mailbox/
 - One markdown section per message, dated, signed with originating session
 - Never edit prior messages — append only
 - ACK by appending an `ACK` section, do not delete
-- Heartbeat snapshot at `~/.cursor/projects/home-etang/heartbeat/snapshots/meta-vex.txt`
+- Heartbeat snapshot at `~/.cursor/projects/home-etang/heartbeat/snapshots/agentdex.txt`
   mirrors the session state every loop tick

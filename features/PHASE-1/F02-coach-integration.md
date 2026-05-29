@@ -6,13 +6,13 @@
 
 ## Goal
 
-`ai-builders-coach` MCP usable from meta-vex with hub-cache invariant.
+`ai-builders-coach` MCP usable from agentdex with hub-cache invariant.
 Adopt granular tools (`list_endpoints`, `get_endpoint`, `get_schema`) as
 they ship from upstream.
 
 ## Deliverables
 
-- [x] `meta_vex.coach.CoachCache` — ETag-aware single-fetch
+- [x] `agentdex.coach.CoachCache` — ETag-aware single-fetch
 - [x] Test `test_hub_fanout_uses_single_spec` asserts fetch_count == 1
 - [ ] Real coach call smoke test (gated behind `META_VEX_LIVE_COACH=1` env)
 - [ ] Adopt `list_endpoints` / `get_endpoint` / `get_schema` when upstream ships

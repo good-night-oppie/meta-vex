@@ -1,30 +1,30 @@
-# meta-vex — VEX Playground
+# agentdex — VEX Playground
 
 ## Project Overview
-meta-vex is the dogfood / showcase lane for the `ionq · helios · oppie` trio.
+agentdex is the dogfood / showcase lane for the `ionq · helios · oppie` trio.
 Hub-and-leaf swarm on top of `ai-builders-coach` MCP. Exercises agentic
 patterns against `space.ai-builders.com` without N× hammering the upstream.
 
 ## Package & CLI
-- Package: `meta_vex` (import with `from meta_vex import ...`)
-- HTTP entry: `uv run uvicorn meta_vex.main:app --port 8421`
-- Config: env vars (see `meta_vex/coach.py`)
+- Package: `agentdex` (import with `from agentdex import ...`)
+- HTTP entry: `uv run uvicorn agentdex.main:app --port 8421`
+- Config: env vars (see `agentdex/coach.py`)
 
 ## Running
 ```bash
 uv sync                                          # install deps
-uv run uvicorn meta_vex.main:app --reload        # dev server
+uv run uvicorn agentdex.main:app --reload        # dev server
 uv run python -m pytest tests/ -v                # tests
 ./scripts/loop_driver.sh                         # /loop driver (Linear + lifecycle + CI)
 ```
 
 ## Architecture
 ```
-meta_vex/main.py            → FastAPI app, /health, /vex/* routes
-meta_vex/coach.py           → ai-builders-coach MCP client, spec cache, ETag
-meta_vex/swarm/hub.py       → hub orchestrator, fan-out planner
-meta_vex/swarm/leaf.py      → leaf worker, reads cached spec slice
-meta_vex/playground/        → VEX UI routes (canvas / preview)
+agentdex/main.py            → FastAPI app, /health, /vex/* routes
+agentdex/coach.py           → ai-builders-coach MCP client, spec cache, ETag
+agentdex/swarm/hub.py       → hub orchestrator, fan-out planner
+agentdex/swarm/leaf.py      → leaf worker, reads cached spec slice
+agentdex/playground/        → VEX UI routes (canvas / preview)
 ```
 
 ## Rules
@@ -37,10 +37,10 @@ meta_vex/playground/        → VEX UI routes (canvas / preview)
 
 ## Multi-Session Overcommunication Protocol
 
-This session (`meta-vex`) is part of the ionq trio constellation.
+This session (`agentdex`) is part of the ionq trio constellation.
 
 ### Your Identity
-- **Session name:** `meta-vex`
+- **Session name:** `agentdex`
 - **Role:** **Showcase / Dogfood Lane** — exercises swarm patterns,
   surfaces real-world bugs in ionq runtime + coach MCP
 - **Peers:** `ionq` (orchestrator), `helios` (CAS), `oppie` (trio meta),
@@ -55,23 +55,23 @@ This session (`meta-vex`) is part of the ionq trio constellation.
 ### Mandatory Broadcasts
 
 ```bash
-MAILBOX=~/gh/meta-vex/.orchestra/mailbox
+MAILBOX=~/gh/agentdex/.orchestra/mailbox
 ```
 
 **On surfacing a coach / ionq / helios bug:**
 Append to `$MAILBOX/<peer>.md`:
 ```markdown
-## BUG from meta-vex @ {timestamp}
+## BUG from agentdex @ {timestamp}
 **Subject:** {one-line summary}
 **Repro:** {minimal command/snippet}
-**Impact on meta-vex:** {what we can't do}
+**Impact on agentdex:** {what we can't do}
 **Suggested fix direction:** {optional}
 ```
 
 **On shipping a swarm benchmark result:**
 Append to `$MAILBOX/all.md`:
 ```markdown
-## BENCH from meta-vex @ {timestamp}
+## BENCH from agentdex @ {timestamp}
 **Workload:** {name}
 **Before:** {metrics}
 **After:** {metrics}
@@ -82,15 +82,15 @@ Append to `$MAILBOX/all.md`:
 Append to `$MAILBOX/cursor.md`
 
 ### On Every New Prompt
-1. Read `$MAILBOX/meta-vex.md` — messages for you
+1. Read `$MAILBOX/agentdex.md` — messages for you
 2. Read `$MAILBOX/all.md` — broadcasts
 3. Read `~/.cursor/projects/home-etang/heartbeat/digest.md` — system state
 4. ACK or act on pending messages
 
 ### Before `/clear` or Context Overflow
-Write CONTEXT_DUMP to `$MAILBOX/meta-vex.md`:
+Write CONTEXT_DUMP to `$MAILBOX/agentdex.md`:
 ```markdown
-## CONTEXT_DUMP from meta-vex @ {timestamp}
+## CONTEXT_DUMP from agentdex @ {timestamp}
 **Current task:** ...
 **Branch:** ...
 **Key decisions:** ...

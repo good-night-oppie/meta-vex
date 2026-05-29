@@ -11,9 +11,9 @@ fan-out workloads against ionq runtime.
 
 ## Deliverables
 
-- [x] `meta_vex.swarm.hub.Hub` with `LeafTask` dataclass + anyio task group
+- [x] `agentdex.swarm.hub.Hub` with `LeafTask` dataclass + anyio task group
 - [x] Reference leaves: `count_endpoints`, `list_schema_names`
-- [x] Leaf task registry / discovery (`@register` decorator, CLI `meta-vex swarm run`)
+- [x] Leaf task registry / discovery (`@register` decorator, CLI `agentdex swarm run`)
 - [x] Result aggregation contract (typed `LeafResult` + `FailureMode`)
 - [x] Fail-fast vs collect-errors mode toggle (`Hub.run(..., mode=FailureMode.COLLECT)`)
 - [ ] Integration with ionq agents (run leaf inside ionq sandbox VFS) — deferred
@@ -29,8 +29,8 @@ fan-out workloads against ionq runtime.
 ## CLI surface
 
 ```bash
-meta-vex swarm list                                                  # registered leaves
-meta-vex swarm run count_records group_by_kind sum_value \
+agentdex swarm list                                                  # registered leaves
+agentdex swarm run count_records group_by_kind sum_value \
     --dataset path/to/records.json --mode collect                    # generic workload
-meta-vex swarm run count_endpoints list_schema_names                 # coach workload (uses cache)
+agentdex swarm run count_endpoints list_schema_names                 # coach workload (uses cache)
 ```

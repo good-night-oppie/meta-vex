@@ -1,13 +1,13 @@
 """CLI entrypoint for swarm operations.
 
 Usage:
-    meta-vex swarm list
-    meta-vex swarm run count_records group_by_kind sum_value \
+    agentdex swarm list
+    agentdex swarm run count_records group_by_kind sum_value \
         --dataset path/to/records.json
-    meta-vex swarm run count_endpoints list_schema_names    # uses coach cache
+    agentdex swarm run count_endpoints list_schema_names    # uses coach cache
 
 Examples:
-    meta-vex swarm run count_records --dataset tests/data/records.json \
+    agentdex swarm run count_records --dataset tests/data/records.json \
         --mode collect
 """
 
@@ -20,11 +20,11 @@ import sys
 from pathlib import Path
 
 # Import leaf module to populate the registry as a side effect.
-import meta_vex.swarm.leaf  # noqa: F401
-from meta_vex.coach import CoachCache
-from meta_vex.swarm.hub import Hub, LeafTask
-from meta_vex.swarm.registry import list_names, resolve
-from meta_vex.swarm.result import FailureMode
+import agentdex.swarm.leaf  # noqa: F401
+from agentdex.coach import CoachCache
+from agentdex.swarm.hub import Hub, LeafTask
+from agentdex.swarm.registry import list_names, resolve
+from agentdex.swarm.result import FailureMode
 
 
 def _serialize_result_value(value: object) -> object:
@@ -67,7 +67,7 @@ async def _cmd_run(args: argparse.Namespace) -> int:
 
 
 def main(argv: list[str] | None = None) -> int:
-    parser = argparse.ArgumentParser(prog="meta-vex")
+    parser = argparse.ArgumentParser(prog="agentdex")
     sub = parser.add_subparsers(dest="domain", required=True)
 
     swarm = sub.add_parser("swarm", help="swarm hub-and-leaf operations")

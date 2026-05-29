@@ -1,14 +1,14 @@
 #!/usr/bin/env bash
-# meta-vex /loop driver.
+# agentdex /loop driver.
 #
 # Drives four lanes on each tick (intended cadence: 10m via /loop skill):
 #   1. Linear poll      — sync issue state → features/PHASE-*/*.md
 #   2. Lifecycle stage  — advance tech-lead pipeline if exit criteria met
 #   3. CI babysit       — surface failed GH Actions runs
-#   4. Heartbeat snap   — write state to ~/.cursor/.../snapshots/meta-vex.txt
+#   4. Heartbeat snap   — write state to ~/.cursor/.../snapshots/agentdex.txt
 #
 # Invoke via:
-#   /loop 10m bash ~/gh/meta-vex/scripts/loop_driver.sh
+#   /loop 10m bash ~/gh/agentdex/scripts/loop_driver.sh
 #
 # Or standalone (one tick):
 #   ./scripts/loop_driver.sh
@@ -20,7 +20,7 @@ cd "$REPO_ROOT"
 
 TS="$(date -u +%Y-%m-%dT%H:%M:%SZ)"
 HEARTBEAT_DIR="${HOME}/.cursor/projects/home-etang/heartbeat"
-SNAPSHOT="${HEARTBEAT_DIR}/snapshots/meta-vex.txt"
+SNAPSHOT="${HEARTBEAT_DIR}/snapshots/agentdex.txt"
 MAILBOX_DIR="${REPO_ROOT}/.orchestra/mailbox"
 LINEAR_TEAM_ID="8bfc8ed9-987f-421a-bc75-527e2613d8a8"  # Good Night Oppie LLC
 
@@ -72,17 +72,17 @@ lane_heartbeat() {
   local stage
   stage="$(cat "${REPO_ROOT}/.orchestra/STAGE" 2>/dev/null || echo 'design')"
   local mailbox_unread
-  mailbox_unread="$(awk '/^## / {c++} END {print c+0}' "${MAILBOX_DIR}/meta-vex.md" 2>/dev/null || printf 0)"
+  mailbox_unread="$(awk '/^## / {c++} END {print c+0}' "${MAILBOX_DIR}/agentdex.md" 2>/dev/null || printf 0)"
 
   cat > "$SNAPSHOT" <<EOF
-session: meta-vex
+session: agentdex
 role: showcase-dogfood
 ts: $TS
 branch: $branch
 commit: $commit
 stage: $stage
 mailbox_msgs: $mailbox_unread
-repo: good-night-oppie/meta-vex
+repo: good-night-oppie/agentdex
 trio: ionq · helios · oppie
 EOF
 }

@@ -17,7 +17,7 @@ from typing import Any
 
 import httpx
 
-DEFAULT_CACHE_DIR = Path(os.getenv("META_VEX_CACHE_DIR", "/tmp/meta-vex"))
+DEFAULT_CACHE_DIR = Path(os.getenv("META_VEX_CACHE_DIR", "/tmp/agentdex"))
 DEFAULT_BASE_URL = os.getenv("COACH_BASE_URL", "https://space.ai-builders.com/backend")
 
 
