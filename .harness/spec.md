@@ -54,6 +54,17 @@ agentdex/modules/
 6. CLI: `agentdex battle <agent_a> <agent_b> --task <id> --mode autonomous`
    (extends existing `swarm` CLI registry).
 
+## Visual effect — keep simple
+
+For now, the "split-screen battle" can be as plain as:
+- two stacked terminal panes (side A above, side B below, tail -f the move logs)
+- a single HTML page with two `<pre>` blocks polling the battle endpoint
+- JSON logs streamed to stdout
+
+Do NOT spend cycles on fancy animations, WebSocket React UI, OG card image
+generation, Twitter cards, Tailwind themes, or canvas-based replays in this
+iteration. Plain text > nothing. Pretty UI is PHASE-4 work, not now.
+
 ## Out of scope (do NOT touch this iteration)
 
 - Frontend / split-screen UI (PHASE-4)
