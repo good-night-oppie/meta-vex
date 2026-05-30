@@ -28,7 +28,7 @@ def harness_dir() -> Path:
 
 
 def hooks_dir() -> Path:
-    return project_root() / "hooks" / "_ionq_hooks"
+    return project_root() / "hooks" / "_agentdex_hooks"
 
 
 def posix_str(p: Path) -> str:

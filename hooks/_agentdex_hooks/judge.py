@@ -80,7 +80,7 @@ def _fetch_op(op_path: str) -> str | None:
 
 
 def _judge_prompt() -> str:
-    base = os.environ.get("IONQ_HOOKS_BASE_REF", "").strip()
+    base = os.environ.get("AGENTDEX_HOOKS_BASE_REF", "").strip()
     diff_cmd = f"git diff {base}...HEAD" if base else "git diff HEAD"
     return (
         "You are an INDEPENDENT JUDGE for a coding-agent reward-hack guardrail.\n"

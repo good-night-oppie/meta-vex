@@ -1,6 +1,6 @@
 """Git-state helpers used by detectors.
 
-Diff scope is controlled by the IONQ_HOOKS_BASE_REF env var:
+Diff scope is controlled by the AGENTDEX_HOOKS_BASE_REF env var:
 
   unset / empty  -> diff vs HEAD (uncommitted changes only) [default]
   <ref>          -> diff vs <ref>...HEAD (full branch scope incl. commits)
@@ -9,9 +9,9 @@ The default matches Stop-hook semantics (validate in-progress edits).
 The base-ref mode is for PR review / pre-merge validation where work
 is already committed. Use:
 
-  IONQ_HOOKS_BASE_REF=origin/master   # branch-vs-trunk
-  IONQ_HOOKS_BASE_REF=main            # local main branch
-  IONQ_HOOKS_BASE_REF=origin/main..   # explicit suffix accepted as-is
+  AGENTDEX_HOOKS_BASE_REF=origin/master   # branch-vs-trunk
+  AGENTDEX_HOOKS_BASE_REF=main            # local main branch
+  AGENTDEX_HOOKS_BASE_REF=origin/main..   # explicit suffix accepted as-is
 
 Three-dot syntax (`<ref>...HEAD`) auto-applied so the diff is taken
 against the merge-base, not literal <ref> tip.
@@ -45,7 +45,7 @@ def _diff_target() -> str:
     HEAD            -> default (uncommitted only)
     <ref>...HEAD    -> branch scope vs merge-base
     """
-    base = os.environ.get("IONQ_HOOKS_BASE_REF", "").strip()
+    base = os.environ.get("AGENTDEX_HOOKS_BASE_REF", "").strip()
     if not base:
         return "HEAD"
     # Accept "ref", "ref..", "ref...", "ref..HEAD", "ref...HEAD"

@@ -8,10 +8,10 @@ import os
 root = os.environ.get("CLAUDE_PROJECT_DIR") or os.environ.get("CURSOR_PROJECT_DIR")
 if not root:
     p = Path(__file__).resolve().parent
-    while p != p.parent and not (p / "hooks" / "_ionq_hooks").exists():
+    while p != p.parent and not (p / "hooks" / "_agentdex_hooks").exists():
         p = p.parent
     root = str(p)
 sys.path.insert(0, str(Path(root) / "hooks"))
 
-from _ionq_hooks.orchestrator import run
+from _agentdex_hooks.orchestrator import run
 run()

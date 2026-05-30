@@ -23,10 +23,10 @@ model family). You run only if cursor-agent SDK is unavailable.
 
 | Smell | What it looks like |
 |---|---|
-| Mock SUT | `mock.patch('ionq.X')` where `ionq/X.py` is being modified |
+| Mock SUT | `mock.patch('agentdex.X')` where `agentdex/X.py` is being modified |
 | Hardcoded fixture | Test setup constructs the exact answer the assertion checks |
 | Weakened assertion | `assert x == 5` → `assert x is not None` |
-| Test deleted, src untouched | `tests/` shrinks but `ionq/` unchanged |
+| Test deleted, src untouched | `tests/` shrinks but `agentdex/` unchanged |
 | Try/except swallow | `except Exception: pass` near new code |
 | Spec drift | New file/module unrelated to spec section |
 | Done without behavior | Diff is comments/stubs only |
