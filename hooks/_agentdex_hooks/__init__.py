@@ -1,12 +1,13 @@
-"""agentdex-hooks shared library — canonical hook chain.
+"""Reward-hack hook chain — synced across good-night-oppie repos.
 
-Single source of truth for hook logic across the good-night-oppie
-constellation (agentdex / bene / helios / oppie). The .claude/hooks/
-and .cursor/hooks/ directories contain thin executable shims that
-delegate here.
+Canonical source: agentdex/hooks/_agentdex_hooks/.
+Mirrors: bene/_bene_hooks, helios/_helios_hooks, oppie/_oppie_hooks.
 
-agentdex hosts the canonical version; bene/helios/oppie sync from
-here via scripts/sync-hooks.sh (sync direction: agentdex → others).
+The .claude/hooks/ and .cursor/hooks/ shims in each repo delegate
+here. To author new detector logic: PR to agentdex first, then run
+agentdex/scripts/sync-hooks.sh to propagate downstream. The package
+name (`_<repo>_hooks`) and env var (`<REPO>_HOOKS_BASE_REF`) are
+sed-rewritten per target by the sync script.
 """
 from __future__ import annotations
 

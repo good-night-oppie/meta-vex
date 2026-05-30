@@ -85,3 +85,28 @@ direction.
 - Reverse op: `rm scripts/sync-hooks.sh`
 
 **Owner:** etang via operator turn 2026-05-31 ~10:14 PDT.
+
+### scope: 2026-05-31 — make judge.md + __init__.py repo-neutral (sync-safe content)
+
+**Date:** 2026-05-31 ~11:22 PDT
+**Active spec:** PHASE-2 battle engine MVP.
+**Plan reference:** companion to prior rename + sync-script entries.
+First sync-hooks.sh run revealed agentdex-specific literals (`agentdex.X`,
+`agentdex hosts the canonical version; bene/helios/oppie sync from
+here`) leaking into bene/helios via sync. Fixed by making source
+repo-neutral so a single sync overwrite reads correctly from any repo.
+
+**Files outside `.harness/files-allowed` touched:**
+- `.claude/agents/judge.md` — DISAGREE table genericized: `<pkg>` / `<src>`
+  placeholders + multi-lang examples (Py/Go/Rust/JS)
+- `hooks/_agentdex_hooks/__init__.py` — docstring repurposed as "shared
+  chain doc" rather than "I am the canonical, others sync from me"
+
+**Authorization:** explicit operator turn 2026-05-31 ~11:22 PDT
+("跑全部 hook sync 计划" after surfacing the leak gap).
+
+**Why this is not silent reward hacking:**
+- Pure docstring/table edit; no detector logic / scope rule / verifier surface change
+- Reverse op: `git revert` this commit + revert any subsequent re-sync
+
+**Owner:** etang via operator turn 2026-05-31 ~11:22 PDT.
